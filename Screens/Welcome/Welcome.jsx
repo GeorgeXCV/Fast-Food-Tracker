@@ -6,10 +6,20 @@ const Welcome = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image style={styles.welcomeImage} source={require("../../Assets/fast-food.png")}/>     
-      <View style={styles.buttonContainer}>
-      <Button colorScheme='blue' size='lg' style={styles.buttonStyle}>Sign Up</Button>
-      <Button colorScheme='blue' size='lg' style={styles.buttonStyle}>Login</Button>
-      </View>
+      <Button 
+        colorScheme='blue' 
+        size='lg' 
+        style={styles.buttonStyle}
+        onPress={() => navigation.navigate('Sign Up')}>
+        Sign Up
+      </Button>
+      <Button 
+        colorScheme='blue' 
+        size='lg' 
+        style={styles.buttonStyle}
+        onPress={() => navigation.navigate('Login')}>          
+        Login
+      </Button>
     </View>
   );
 }

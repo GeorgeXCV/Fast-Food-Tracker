@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NativeBaseProvider } from 'native-base';
 import { StatusBar } from 'expo-status-bar';
 import Welcome from './Screens/Welcome/Welcome'
+import SignUp from './Screens/SignUp/SignUp'
+import Login from './Screens/Login/Login'
 
 const Stack = createStackNavigator();
 
@@ -15,24 +17,33 @@ export default function App() {
       <NativeBaseProvider>
       <Stack.Navigator>
         <Stack.Screen
-          name="Welcome"
+          name="Fast Food Tracker"
           component={Welcome}
-          options={{ 
-            title: 'Fast Food Tracker',
-            headerStyle: {
-              backgroundColor: 'black',
-              shadowColor: 'transparent'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: 'white',
-            }, 
-          }}
+          options={navigationBarStyle}
         />
+        <Stack.Screen 
+        name="Sign Up" 
+        component={SignUp} 
+        options={navigationBarStyle}/>
+        <Stack.Screen 
+        name="Login" 
+        component={Login} 
+        options={navigationBarStyle}/>
       </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>
   );
 }
+
+const navigationBarStyle =  {
+  headerStyle: {
+    backgroundColor: 'black',
+    shadowColor: 'transparent'
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+  }
+};
